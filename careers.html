@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Careers — Content Bug</title>
+  <meta name="description" content="Join the Content Bug remote team. Hiring editors, project managers, and sales closers based in the Philippines.">
+
+  <style>
+    /* ── FONTS ─────────────────────────────────────────────── */
+    @font-face { font-family:'SF Pro Display'; src:url('style-guide/fonts/sf-pro-display_regular.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:'SF Pro Display'; src:url('style-guide/fonts/sf-pro-display_medium.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+    @font-face { font-family:'SF Pro Display'; src:url('style-guide/fonts/sf-pro-display_semibold.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+    @font-face { font-family:'SF Pro Display'; src:url('style-guide/fonts/sf-pro-display_bold.woff2') format('woff2'); font-weight:700; font-style:normal; font-display:swap; }
+    @font-face { font-family:'SF Pro Text'; src:url('style-guide/fonts/sf-pro-text_regular.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:'SF Pro Text'; src:url('style-guide/fonts/sf-pro-text_semibold.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+
+    /* ── TOKENS ────────────────────────────────────────────── */
+    :root {
+      --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, 'Helvetica Neue', Arial, sans-serif;
+      --font-text:    'SF Pro Text',    -apple-system, BlinkMacSystemFont, system-ui, 'Helvetica Neue', Arial, sans-serif;
+      --font: var(--font-text);
+
+      --t1: #1d1d1f;
+      --t2: #6e6e73;
+      --t3: #86868b;
+      --blue:  #0071e3;
+      --blue2: #0077ed;
+      --blue3: #2997ff;
+      --gold:  #f5a623;
+
+      --bg-light: #ffffff;
+      --bg-dark:  #0c1627;
+
+      --glass-bg:     #ffffff;
+      --glass-bg-alt: #f5f5f7;
+      --glass-border: #d2d2d7;
+      --card-border:  #d2d2d7;
+
+      --s1: 8px;  --s2: 16px; --s3: 24px;
+      --s4: 32px; --s6: 48px; --s8: 64px; --s10: 80px;
+
+      --radius:      18px;
+      --radius-sm:   14px;
+      --radius-pill: 100px;
+
+      --shadow-card: 0 2px 8px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.06);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,.06), 0 12px 32px rgba(0,0,0,.08);
+      --shadow-btn:  0 2px 8px rgba(0,113,227,.2), 0 6px 20px rgba(0,113,227,.15);
+
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      color: var(--t1);
+      background: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ────────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 var(--s6); height: 52px;
+      background: rgba(12,22,39,0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      backdrop-filter: none;
+    }
+    .nav-logo {
+      font-family: var(--font-display); font-size: 17px; font-weight: 700;
+      color: #fff; text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-back {
+      font-family: var(--font-text); font-size: 14px; font-weight: 600;
+      color: var(--blue3); text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.75; }
+
+    /* ── HERO ───────────────────────────────────────────────── */
+    .hero {
+      background: var(--bg-dark);
+      padding: calc(52px + var(--s10)) var(--s6) var(--s10);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -300px; left: 50%;
+      transform: translateX(-50%); width: 900px; height: 900px;
+      background: radial-gradient(ellipse, rgba(41,151,255,.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -200px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(41,151,255,.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-label {
+      font-family: var(--font-text); font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px; color: var(--blue3);
+      margin-bottom: var(--s3);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5.5vw, 68px);
+      font-weight: 700; letter-spacing: -0.04em; line-height: 1.04;
+      color: #fff; margin-bottom: var(--s3);
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px); font-weight: 400;
+      color: rgba(255,255,255,0.58); max-width: 580px; margin: 0 auto;
+      line-height: 1.65;
+    }
+    .hero-pills {
+      display: flex; gap: 10px; justify-content: center;
+      margin-top: var(--s6); flex-wrap: wrap;
+    }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      font-family: var(--font-text); font-size: 13px; font-weight: 600;
+      color: rgba(255,255,255,0.7); white-space: nowrap;
+    }
+
+    /* ── ROLES SECTION ──────────────────────────────────────── */
+    .roles-section {
+      background: var(--bg-light);
+      padding: var(--s10) var(--s6);
+    }
+    .section-label {
+      font-family: var(--font-text); font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px; color: var(--blue);
+      text-align: center; margin-bottom: var(--s3);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 600; letter-spacing: -0.035em; line-height: 1.08;
+      color: var(--t1); text-align: center; margin-bottom: var(--s2);
+    }
+    .section-sub {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 20px); font-weight: 500;
+      color: var(--t2); text-align: center;
+      max-width: 540px; margin: 0 auto var(--s8);
+    }
+    .roles-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: var(--s4); max-width: 1080px; margin: 0 auto;
+    }
+    .role-card {
+      background: var(--glass-bg); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: var(--s6) var(--s4);
+      display: flex; flex-direction: column; align-items: flex-start;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .role-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--blue3));
+      opacity: 0; transition: opacity 0.3s var(--ease);
+    }
+    .role-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(0,113,227,0.18); }
+    .role-card:hover::before { opacity: 1; }
+    .role-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: linear-gradient(135deg, #e8f0fc, #d0e4ff);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--s3); font-size: 24px;
+    }
+    .role-card h3 {
+      font-family: var(--font-display); font-size: 22px; font-weight: 600;
+      letter-spacing: -0.025em; color: var(--t1); margin-bottom: var(--s2);
+    }
+    .role-card p {
+      font-family: var(--font-text); font-size: 15px; color: var(--t2);
+      line-height: 1.58; flex: 1; margin-bottom: var(--s4);
+    }
+
+    /* ── BUTTONS ────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 12px 22px; background: var(--blue); color: #fff;
+      font-family: var(--font-text); font-size: 15px; font-weight: 600;
+      letter-spacing: -0.01em; border: none; border-radius: var(--radius-sm);
+      cursor: pointer; box-shadow: var(--shadow-btn); white-space: nowrap;
+      transition: background 0.25s var(--ease), transform 0.2s var(--ease), box-shadow 0.25s;
+      width: 100%;
+    }
+    .btn-primary:hover { background: var(--blue2); transform: scale(1.02); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-primary:disabled { background: #aaa; box-shadow: none; cursor: not-allowed; transform: none; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 22px; background: transparent;
+      color: var(--t2); font-family: var(--font-text);
+      font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
+      border: 1px solid var(--glass-border); border-radius: var(--radius-sm);
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { background: var(--glass-bg-alt); color: var(--t1); }
+
+    /* ── WIZARD OVERLAY ─────────────────────────────────────── */
+    .wizard-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.72);
+      display: none; align-items: center; justify-content: center;
+      padding: var(--s3); overflow-y: auto;
+    }
+    .wizard-overlay.active { display: flex; }
+
+    .wizard-modal {
+      background: var(--bg-light); border-radius: 22px;
+      width: 100%; max-width: 700px;
+      max-height: 92vh; overflow-y: auto;
+      box-shadow: 0 32px 100px rgba(0,0,0,0.4);
+      position: relative; animation: wIn 0.38s var(--ease) forwards;
+      scrollbar-width: thin; scrollbar-color: var(--card-border) transparent;
+    }
+    @keyframes wIn {
+      from { opacity:0; transform:translateY(28px) scale(0.96); }
+      to   { opacity:1; transform:translateY(0)    scale(1);    }
+    }
+    .wizard-modal::-webkit-scrollbar { width: 6px; }
+    .wizard-modal::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
+
+    /* Wizard Header */
+    .wizard-header {
+      padding: var(--s4) var(--s6) var(--s3);
+      position: sticky; top: 0; z-index: 10;
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .wizard-header-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: var(--s3);
+    }
+    .role-badge {
+      font-family: var(--font-text); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--blue);
+      background: rgba(0,113,227,0.09); padding: 5px 12px;
+      border-radius: var(--radius-pill);
+    }
+    .wizard-close {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--glass-bg-alt); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--t2);
+      transition: background 0.2s, color 0.2s;
+    }
+    .wizard-close:hover { background: var(--card-border); color: var(--t1); }
+    .progress-row { display: flex; align-items: center; gap: 10px; }
+    .progress-track {
+      flex: 1; height: 4px; background: var(--glass-bg-alt);
+      border-radius: 2px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; border-radius: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--blue3));
+      transition: width 0.4s var(--ease);
+    }
+    .progress-label {
+      font-family: var(--font-text); font-size: 12px; font-weight: 600;
+      color: var(--t3); white-space: nowrap;
+    }
+
+    /* Wizard Body */
+    .wizard-body { padding: var(--s6); }
+
+    .step-title {
+      font-family: var(--font-display); font-size: 26px; font-weight: 600;
+      letter-spacing: -0.03em; color: var(--t1); margin-bottom: 6px;
+    }
+    .step-sub {
+      font-family: var(--font-text); font-size: 15px; color: var(--t2);
+      line-height: 1.55; margin-bottom: var(--s4);
+    }
+
+    /* Form controls */
+    .form-group { margin-bottom: var(--s3); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+    .form-label {
+      display: block; font-family: var(--font-text); font-size: 13px;
+      font-weight: 600; color: var(--t1); margin-bottom: 6px; letter-spacing: -0.01em;
+    }
+    .req { color: var(--blue); margin-left: 2px; }
+    .optional { color: var(--t3); font-weight: 400; font-size: 12px; }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 11px 14px;
+      font-family: var(--font-text); font-size: 15px; color: var(--t1);
+      background: var(--glass-bg-alt); border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.12);
+      background: var(--bg-light);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--t3); }
+    .form-textarea { min-height: 120px; resize: vertical; line-height: 1.55; }
+    .form-textarea.tall { min-height: 165px; }
+    .form-input.err, .form-textarea.err, .form-select.err { border-color: #d32f2f; }
+
+    /* Info / warning boxes */
+    .info-box {
+      background: rgba(0,113,227,0.05); border: 1px solid rgba(0,113,227,0.14);
+      border-radius: var(--radius-sm); padding: var(--s3); margin-bottom: var(--s4);
+    }
+    .info-box-label {
+      font-family: var(--font-text); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px; color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .info-box p { font-family: var(--font-text); font-size: 14px; color: var(--t1); line-height: 1.6; }
+    .info-box a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .info-box a:hover { text-decoration: underline; }
+
+    .warn-box {
+      background: rgba(245,166,35,0.07); border: 1px solid rgba(245,166,35,0.22);
+      border-radius: var(--radius-sm); padding: var(--s3); margin-bottom: var(--s4);
+    }
+    .warn-box p { font-family: var(--font-text); font-size: 14px; color: #7a5500; line-height: 1.6; }
+
+    /* Radio options */
+    .radio-group { display: flex; flex-direction: column; gap: var(--s2); }
+    .radio-opt {
+      display: flex; align-items: center; gap: 12px;
+      padding: 13px 16px; border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s; user-select: none;
+    }
+    .radio-opt:hover { border-color: rgba(0,113,227,0.3); background: rgba(0,113,227,0.025); }
+    .radio-opt.sel { border-color: var(--blue); background: rgba(0,113,227,0.055); }
+    .radio-dot {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 2px solid var(--card-border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s;
+    }
+    .radio-opt.sel .radio-dot { border-color: var(--blue); }
+    .radio-dot-inner {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue); opacity: 0; transition: opacity 0.2s; transform: scale(0.6);
+      transition: opacity 0.2s, transform 0.2s var(--ease);
+    }
+    .radio-opt.sel .radio-dot-inner { opacity: 1; transform: scale(1); }
+    .radio-text { font-family: var(--font-text); font-size: 15px; color: var(--t1); font-weight: 500; }
+
+    /* Chips */
+    .chips-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--s3); }
+    .chip {
+      padding: 8px 15px; border: 1px solid var(--card-border);
+      border-radius: var(--radius-pill);
+      font-family: var(--font-text); font-size: 13px; font-weight: 600;
+      color: var(--t2); cursor: pointer; user-select: none;
+      transition: all 0.2s var(--ease);
+    }
+    .chip:hover { border-color: rgba(0,113,227,0.35); color: var(--t1); }
+    .chip.sel { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+    .custom-chip-row { display: flex; gap: var(--s2); }
+    .custom-chip-row input { flex: 1; }
+    .custom-chip-row .add-btn {
+      padding: 10px 18px; background: var(--glass-bg-alt);
+      border: 1px solid var(--card-border); border-radius: var(--radius-sm);
+      font-family: var(--font-text); font-size: 13px; font-weight: 600;
+      color: var(--t1); cursor: pointer; white-space: nowrap;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .custom-chip-row .add-btn:hover { background: rgba(0,113,227,0.07); border-color: var(--blue); color: var(--blue); }
+
+    /* File upload */
+    .upload-zone {
+      border: 2px dashed var(--card-border); border-radius: var(--radius);
+      padding: var(--s6) var(--s4); text-align: center; cursor: pointer;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .upload-zone:hover, .upload-zone.drag { border-color: var(--blue); background: rgba(0,113,227,0.03); }
+    .upload-zone input[type="file"] { display: none; }
+    .upload-icon { font-size: 30px; margin-bottom: var(--s2); }
+    .upload-title { font-family: var(--font-text); font-size: 15px; font-weight: 600; color: var(--t1); margin-bottom: 4px; }
+    .upload-hint { font-family: var(--font-text); font-size: 13px; color: var(--t3); }
+    .upload-fname {
+      margin-top: var(--s2); font-family: var(--font-text);
+      font-size: 13px; color: var(--blue); font-weight: 600; min-height: 18px;
+    }
+
+    /* Checkbox */
+    .check-opt {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 14px 16px; border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s; user-select: none;
+    }
+    .check-opt:hover { border-color: rgba(0,113,227,0.3); }
+    .check-opt.sel { border-color: var(--blue); background: rgba(0,113,227,0.04); }
+    .check-box {
+      width: 18px; height: 18px; border-radius: 5px;
+      border: 2px solid var(--card-border); flex-shrink: 0; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: #fff; transition: all 0.2s;
+    }
+    .check-opt.sel .check-box { background: var(--blue); border-color: var(--blue); }
+    .check-opt.sel .check-box::after { content: '✓'; }
+    .check-text { font-family: var(--font-text); font-size: 15px; color: var(--t1); font-weight: 500; line-height: 1.5; }
+
+    /* Video container */
+    .video-wrap {
+      background: var(--bg-dark); border-radius: var(--radius);
+      overflow: hidden; aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--s3); position: relative;
+    }
+    .video-placeholder {
+      text-align: center; padding: var(--s4);
+    }
+    .video-placeholder .vi { font-size: 44px; margin-bottom: var(--s2); }
+    .video-placeholder p {
+      font-family: var(--font-text); font-size: 14px;
+      color: rgba(255,255,255,0.5); line-height: 1.55;
+    }
+    .video-placeholder .vt-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; margin-top: var(--s3); padding: 12px 24px;
+      background: var(--blue); color: #fff;
+      font-family: var(--font-text); font-size: 15px; font-weight: 600;
+      border: none; border-radius: var(--radius-sm); cursor: pointer;
+      box-shadow: var(--shadow-btn); transition: background 0.2s;
+    }
+    .video-placeholder .vt-btn:hover { background: var(--blue2); }
+    .videotiny-iframe { width: 100%; height: 100%; border: none; }
+
+    /* Field error */
+    .ferr { font-family: var(--font-text); font-size: 12px; color: #d32f2f; margin-top: 5px; font-weight: 500; }
+
+    /* Success screen */
+    .success-wrap { text-align: center; padding: var(--s10) var(--s6); }
+    .success-check {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: linear-gradient(135deg, #34c759, #30d158);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto var(--s4); font-size: 34px; color: #fff;
+      box-shadow: 0 8px 24px rgba(52,199,89,0.35);
+    }
+    .success-title {
+      font-family: var(--font-display); font-size: 30px; font-weight: 700;
+      letter-spacing: -0.035em; color: var(--t1); margin-bottom: var(--s2);
+    }
+    .success-sub {
+      font-family: var(--font-text); font-size: 16px; color: var(--t2);
+      line-height: 1.65; max-width: 420px; margin: 0 auto var(--s6);
+    }
+    .success-close {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 13px 28px; background: var(--t1); color: #fff;
+      font-family: var(--font-text); font-size: 15px; font-weight: 600;
+      border: none; border-radius: var(--radius-sm); cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .success-close:hover { opacity: 0.8; }
+
+    /* Wizard footer */
+    .wizard-footer {
+      padding: var(--s4) var(--s6);
+      border-top: 1px solid var(--card-border);
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; bottom: 0; background: var(--bg-light); z-index: 5;
+    }
+    .wizard-footer .btn-primary { width: auto; min-width: 150px; }
+
+    /* Review summary */
+    .review-table { width: 100%; border-collapse: collapse; }
+    .review-table tr td {
+      padding: 9px 0; border-bottom: 1px solid var(--glass-bg-alt);
+      font-family: var(--font-text); font-size: 14px; vertical-align: top;
+    }
+    .review-table tr td:first-child { color: var(--t3); font-weight: 600; width: 45%; padding-right: 12px; }
+    .review-table tr td:last-child { color: var(--t1); }
+
+    /* PAGE FOOTER */
+    .page-footer {
+      background: var(--bg-dark); padding: var(--s8) var(--s6); text-align: center;
+    }
+    .page-footer p { font-family: var(--font-text); font-size: 13px; color: rgba(255,255,255,0.3); }
+
+    /* Animations */
+    @keyframes shake {
+      0%,100%  { transform: translateX(0); }
+      20%      { transform: translateX(-5px); }
+      40%      { transform: translateX(5px); }
+      60%      { transform: translateX(-3px); }
+      80%      { transform: translateX(3px); }
+    }
+    .shake { animation: shake 0.4s ease; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav { padding: 0 var(--s4); }
+      .hero { padding: calc(52px + var(--s8)) var(--s4) var(--s8); }
+      .roles-section { padding: var(--s8) var(--s4); }
+      .roles-grid { grid-template-columns: 1fr; }
+      .wizard-body { padding: var(--s4); }
+      .wizard-header { padding: var(--s3) var(--s4); }
+      .wizard-footer { padding: var(--s3) var(--s4); gap: var(--s2); }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="/" class="nav-logo">Content Bug</a>
+  <a href="/" class="nav-back">← Back to Site</a>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section class="hero">
+  <p class="hero-label">We're Hiring</p>
+  <h1 class="hero-title">Join the<br>Content Bug Team</h1>
+  <p class="hero-sub">We're a fully remote video editing company hiring exceptional talent based in the Philippines. Our team operates on Pacific Standard Time, working 9 AM – 6 PM PST every day to serve our clients at the highest level.</p>
+  <div class="hero-pills">
+    <span class="hero-pill">🌍 100% Remote</span>
+    <span class="hero-pill">🇵🇭 Philippines Based</span>
+    <span class="hero-pill">🕐 9 AM – 6 PM PST</span>
+    <span class="hero-pill">3 Open Roles</span>
+  </div>
+</section>
+
+<!-- ── ROLES ──────────────────────────────────────────────── -->
+<section class="roles-section">
+  <p class="section-label">Open Positions</p>
+  <h2 class="section-title">Find Your Role</h2>
+  <p class="section-sub">Three open positions. Pick the one that matches your skills and apply directly.</p>
+
+  <div class="roles-grid">
+
+    <!-- Editor -->
+    <div class="role-card">
+      <div class="role-icon">✂️</div>
+      <h3>Professional Editor</h3>
+      <p>Create high-quality video edits for creators, brands, and social media content. You'll be the backbone of our production pipeline, delivering polished work that makes clients look world-class.</p>
+      <button class="btn-primary" onclick="openWizard('editor')">Apply Now →</button>
+    </div>
+
+    <!-- PM -->
+    <div class="role-card">
+      <div class="role-icon">📋</div>
+      <h3>Project Manager</h3>
+      <p>Manage production pipelines, editors, and client deliverables. You keep the machine running — every project on time, every client happy, every deadline met without excuses.</p>
+      <button class="btn-primary" onclick="openWizard('pm')">Apply Now →</button>
+    </div>
+
+    <!-- Sales -->
+    <div class="role-card">
+      <div class="role-icon">🎯</div>
+      <h3>Sales Closer</h3>
+      <p>Handle inbound sales calls and close new clients for Content Bug. You'll be the first impression for our future clients — confident, sharp, and relentlessly effective.</p>
+      <button class="btn-primary" onclick="openWizard('sales')">Apply Now →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="page-footer">
+  <p>© 2025 Content Bug. Applications reviewed on a rolling basis. We'll respond within 5–7 business days.</p>
+</footer>
+
+<!-- ── WIZARD MODAL ───────────────────────────────────────── -->
+<div class="wizard-overlay" id="wOverlay">
+  <div class="wizard-modal" id="wModal">
+
+    <!-- Header -->
+    <div class="wizard-header">
+      <div class="wizard-header-row">
+        <span class="role-badge" id="wRoleBadge">Editor</span>
+        <button class="wizard-close" id="wClose" title="Close">✕</button>
+      </div>
+      <div class="progress-row">
+        <div class="progress-track">
+          <div class="progress-fill" id="wProgressFill" style="width:7%"></div>
+        </div>
+        <span class="progress-label" id="wProgressLabel">Step 1 of 14</span>
+      </div>
+    </div>
+
+    <!-- Body (steps render here) -->
+    <div class="wizard-body" id="wBody"></div>
+
+    <!-- Footer nav -->
+    <div class="wizard-footer" id="wFooter">
+      <button class="btn-ghost" id="wBack">← Back</button>
+      <button class="btn-primary" id="wNext" style="width:auto;min-width:150px">Continue →</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ================================================================
+   CONFIG
+================================================================ */
+const CFG = {
+  AIRTABLE_API_KEY:  'REPLACE_WITH_AIRTABLE_KEY'  // ⚠️ Set this via env — never commit real key,
+  AIRTABLE_BASE_ID:  'appUvZqaCBZ42r9Nl',   // ← update after creating the base
+  AIRTABLE_TABLE:    'Applications',
+  SUBMIT_ENDPOINT:   'https://api.contentbug.io/api/careers/apply',  // portal backend
+  VIDEOTINY_ID:      'REPLACE_WITH_VIDEOTINY_PROJECT_ID',
+};
+
+const ROLE_LABELS = { editor: 'Professional Editor', pm: 'Project Manager', sales: 'Sales Closer' };
+
+const ROLE_STEPS = {
+  editor: ['basic_info','work_hours','computer_specs','internet_speed','software_exp',
+           'best_edit','edit_verify','edit_workflow',
+           'ct1','ct2','ct3','video_intro','references','review'],
+  pm:     ['basic_info','work_hours','computer_specs','internet_speed','software_exp',
+           'ct1','ct2','ct3','pm1','pm2','video_intro','references','review'],
+  sales:  ['basic_info','work_hours','computer_specs','internet_speed','software_exp',
+           'ct1','ct2','ct3','sales1','sales2','video_intro','references','review'],
+};
+
+/* ================================================================
+   STATE
+================================================================ */
+let S = {
+  role: null, steps: [], idx: 0,
+  data: {}, files: {}, submitting: false
+};
+
+/* ================================================================
+   OPEN / CLOSE
+================================================================ */
+function openWizard(role) {
+  S = { role, steps: ROLE_STEPS[role], idx: 0, data: { role: ROLE_LABELS[role], ts: new Date().toISOString() }, files: {}, submitting: false };
+  document.getElementById('wRoleBadge').textContent = ROLE_LABELS[role];
+  document.getElementById('wOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  renderStep();
+}
+
+function closeWizard() {
+  if (S.submitting) return;
+  document.getElementById('wOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('wClose').onclick  = closeWizard;
+document.getElementById('wBack').onclick   = prevStep;
+document.getElementById('wNext').onclick   = nextStep;
+document.getElementById('wOverlay').onclick = e => { if (e.target === e.currentTarget) closeWizard(); };
+
+/* ================================================================
+   NAVIGATION
+================================================================ */
+function nextStep() {
+  if (S.submitting) return;
+  const key = S.steps[S.idx];
+  saveData(key);
+  if (!validate(key)) return;
+  if (key === 'review') { submit(); return; }
+  S.idx++;
+  renderStep();
+}
+
+function prevStep() {
+  if (S.idx === 0) return;
+  S.idx--;
+  renderStep();
+}
+
+/* ================================================================
+   PROGRESS
+================================================================ */
+function updateProgress() {
+  const total = S.steps.length;
+  const cur   = S.idx + 1;
+  const pct   = Math.round((cur / total) * 100);
+  document.getElementById('wProgressFill').style.width = pct + '%';
+  document.getElementById('wProgressLabel').textContent = `Step ${cur} of ${total}`;
+  document.getElementById('wBack').style.visibility = S.idx === 0 ? 'hidden' : 'visible';
+  const btn = document.getElementById('wNext');
+  btn.textContent = S.steps[S.idx] === 'review' ? 'Submit Application ✓' : 'Continue →';
+  btn.disabled = S.submitting;
+}
+
+/* ================================================================
+   RENDER STEP
+================================================================ */
+function renderStep() {
+  const key  = S.steps[S.idx];
+  const body = document.getElementById('wBody');
+  body.innerHTML = stepHTML(key);
+  document.getElementById('wModal').scrollTop = 0;
+  updateProgress();
+  postRender(key);
+  restoreData(key);
+}
+
+/* ================================================================
+   STEP HTML TEMPLATES
+================================================================ */
+function stepHTML(k) {
+  switch (k) {
+
+  /* ── BASIC INFO ─────────────────────────────────────── */
+  case 'basic_info': return `
+    <h2 class="step-title">Basic Information</h2>
+    <p class="step-sub">Tell us about yourself. Fields marked <span class="req">*</span> are required.</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">First Name <span class="req">*</span></label>
+        <input class="form-input" id="fi_first" type="text" placeholder="Juan" autocomplete="given-name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Last Name <span class="req">*</span></label>
+        <input class="form-input" id="fi_last" type="text" placeholder="Dela Cruz" autocomplete="family-name">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Email Address <span class="req">*</span></label>
+        <input class="form-input" id="fi_email" type="email" placeholder="juan@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number <span class="req">*</span></label>
+        <input class="form-input" id="fi_phone" type="tel" placeholder="+63 912 345 6789" autocomplete="tel">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">City / Province (Philippines) <span class="req">*</span></label>
+      <input class="form-input" id="fi_location" type="text" placeholder="Makati, Metro Manila">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Years of Professional Experience <span class="req">*</span></label>
+        <select class="form-select" id="fi_yrsExp">
+          <option value="">Select…</option>
+          <option>Less than 1 year</option><option>1–2 years</option>
+          <option>3–5 years</option><option>5–8 years</option><option>8+ years</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Earliest Start Date <span class="req">*</span></label>
+        <input class="form-input" id="fi_startDate" type="date" min="${new Date().toISOString().split('T')[0]}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Previous Employer(s) and Role(s) <span class="req">*</span></label>
+      <textarea class="form-textarea" id="fi_employers" placeholder="Company Name — Role Title (Year–Year)&#10;Company Name — Role Title (Year–Year)"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">LinkedIn Profile <span class="optional">(optional)</span></label>
+      <input class="form-input" id="fi_linkedin" type="url" placeholder="https://linkedin.com/in/yourprofile">
+    </div>
+  `;
+
+  /* ── WORK HOURS ─────────────────────────────────────── */
+  case 'work_hours': return `
+    <h2 class="step-title">Work Hours Confirmation</h2>
+    <p class="step-sub">Content Bug operates on Pacific Standard Time. Read carefully before answering.</p>
+    <div class="info-box">
+      <div class="info-box-label">🕐 Required Working Hours</div>
+      <p><strong>9:00 AM – 6:00 PM Pacific Standard Time (PST)</strong></p>
+      <p style="margin-top:8px">In the Philippines (PST +16), this means your local shift is approximately <strong>1:00 AM – 10:00 AM PHT</strong> (next day).</p>
+      <p style="margin-top:8px">All team members must be online, responsive, and available during these hours. This is a firm requirement, not flexible.</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Are you able to work 9:00 AM – 6:00 PM PST? <span class="req">*</span></label>
+      <div class="radio-group" id="rg_pst">
+        <div class="radio-opt" data-rg="canPST" data-val="Yes" onclick="pickRadio(this)">
+          <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+          <span class="radio-text">Yes — I can work these hours</span>
+        </div>
+        <div class="radio-opt" data-rg="canPST" data-val="No" onclick="pickRadio(this)">
+          <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+          <span class="radio-text">No — I cannot work these hours</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" id="localHrsGrp" style="display:none">
+      <label class="form-label">Your local hours in the Philippines <span class="req">*</span></label>
+      <input class="form-input" id="fi_localHrs" type="text" placeholder="e.g. 1:00 AM – 10:00 AM PHT">
+    </div>
+  `;
+
+  /* ── COMPUTER SPECS ─────────────────────────────────── */
+  case 'computer_specs': return `
+    <h2 class="step-title">Computer Specifications</h2>
+    <p class="step-sub">We need to verify your setup handles the workload. All fields required.</p>
+    <div class="form-group">
+      <label class="form-label">CPU / Processor <span class="req">*</span></label>
+      <input class="form-input" id="fi_cpu" type="text" placeholder="e.g. Intel Core i7-12700H · Apple M2 Pro · AMD Ryzen 7 5800H">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">RAM <span class="req">*</span></label>
+        <select class="form-select" id="fi_ram">
+          <option value="">Select…</option>
+          <option>8 GB</option><option>16 GB</option>
+          <option>32 GB</option><option>64 GB</option><option>128 GB+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">GPU <span class="req">*</span></label>
+        <input class="form-input" id="fi_gpu" type="text" placeholder="e.g. NVIDIA RTX 3060 · AMD RX 6600 · Apple M2 GPU">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Storage Type <span class="req">*</span></label>
+        <div class="radio-group" id="rg_storage">
+          <div class="radio-opt" data-rg="storage" data-val="SSD" onclick="pickRadio(this)">
+            <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+            <span class="radio-text">SSD</span>
+          </div>
+          <div class="radio-opt" data-rg="storage" data-val="HDD" onclick="pickRadio(this)">
+            <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+            <span class="radio-text">HDD</span>
+          </div>
+          <div class="radio-opt" data-rg="storage" data-val="SSD + HDD" onclick="pickRadio(this)">
+            <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+            <span class="radio-text">Both (SSD + HDD)</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Operating System <span class="req">*</span></label>
+        <select class="form-select" id="fi_os">
+          <option value="">Select…</option>
+          <option>Windows 10</option><option>Windows 11</option>
+          <option>macOS 12 (Monterey)</option><option>macOS 13 (Ventura)</option>
+          <option>macOS 14 (Sonoma)</option><option>macOS 15 (Sequoia)</option>
+          <option>Linux</option>
+        </select>
+      </div>
+    </div>
+  `;
+
+  /* ── INTERNET SPEED ─────────────────────────────────── */
+  case 'internet_speed': return `
+    <h2 class="step-title">Internet Speed Test</h2>
+    <p class="step-sub">A fast, reliable connection is non-negotiable for remote work. Run a speed test and upload the screenshot.</p>
+    <div class="info-box">
+      <div class="info-box-label">📶 Instructions</div>
+      <p>1. Visit <a href="https://speedtest.net" target="_blank" rel="noopener">speedtest.net</a> and run a full test.<br>
+         2. Take a screenshot showing <strong>download speed, upload speed, and ping</strong>.<br>
+         3. Upload the screenshot below.</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Speed Test Screenshot <span class="req">*</span></label>
+      <div class="upload-zone" id="uz_speed" onclick="document.getElementById('fu_speed').click()">
+        <input type="file" id="fu_speed" accept="image/*" onchange="onFile(this,'speed','uz_speed')">
+        <div class="upload-icon">📸</div>
+        <div class="upload-title">Click or drag to upload</div>
+        <div class="upload-hint">PNG · JPG · Max 10 MB</div>
+        <div class="upload-fname" id="fn_speed"></div>
+      </div>
+    </div>
+  `;
+
+  /* ── SOFTWARE EXP ───────────────────────────────────── */
+  case 'software_exp': return `
+    <h2 class="step-title">Software Experience</h2>
+    <p class="step-sub">Select every tool you have professional experience with. Add anything not listed.</p>
+    <div class="chips-wrap" id="chipWrap">
+      ${['Adobe Premiere Pro','After Effects','DaVinci Resolve','Final Cut Pro','ClickUp','Asana','Notion','Trello','Monday','Slack','Zoom','HubSpot','Close CRM','Google Workspace'].map(s=>`<div class="chip" data-v="${s}" onclick="toggleChip(this)">${s}</div>`).join('')}
+    </div>
+    <p style="font-size:13px;color:var(--t3);margin-bottom:8px">Add a tool not listed above:</p>
+    <div class="custom-chip-row">
+      <input class="form-input" id="chipInput" type="text" placeholder="e.g. Frame.io, CapCut, Loom…">
+      <button class="add-btn" onclick="addChip()">+ Add</button>
+    </div>
+  `;
+
+  /* ── CRITICAL THINKING Q1 ───────────────────────────── */
+  case 'ct1': return `
+    <h2 class="step-title">Critical Thinking</h2>
+    <p class="step-sub">Question 1 of 3 — Take your time. We want honest, thoughtful answers.</p>
+    <div class="warn-box">
+      <p>💡 <strong>Instruction:</strong> To confirm you read this application carefully, include the phrase <strong>"Sean is Cool"</strong> somewhere in one of your written answers. Applications missing this phrase will not be considered.</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label">A client asks for a project to be completed by tomorrow, but completing it would cause other deadlines to be missed. How would you handle this situation? <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_ct1" placeholder="Describe your exact approach, step by step…"></textarea>
+    </div>
+  `;
+
+  /* ── CRITICAL THINKING Q2 ───────────────────────────── */
+  case 'ct2': return `
+    <h2 class="step-title">Critical Thinking</h2>
+    <p class="step-sub">Question 2 of 3</p>
+    <div class="form-group">
+      <label class="form-label">You notice a mistake in a project that no one else has caught yet, and the deadline is approaching quickly. What would you do? <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_ct2" placeholder="Walk us through your exact response — who you contact, how quickly, what you say…"></textarea>
+    </div>
+  `;
+
+  /* ── CRITICAL THINKING Q3 ───────────────────────────── */
+  case 'ct3': return `
+    <h2 class="step-title">Critical Thinking</h2>
+    <p class="step-sub">Question 3 of 3</p>
+    <div class="form-group">
+      <label class="form-label">Describe a time you had to learn something new quickly to complete a job or task. What steps did you take? <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_ct3" placeholder="Tell us the full story — the situation, what you needed to learn, how you learned it, and the outcome…"></textarea>
+    </div>
+  `;
+
+  /* ── VIDEO INTRO ────────────────────────────────────── */
+  case 'video_intro': return `
+    <h2 class="step-title">Video Introduction</h2>
+    <p class="step-sub">Record a short 60-second intro. This is your chance to stand out.</p>
+    <div class="info-box">
+      <div class="info-box-label">🎬 What to Cover</div>
+      <p>• Your professional background<br>
+         • Why you're a great fit for Content Bug<br>
+         • What makes you different from other applicants<br>
+         • <strong>Maximum 60 seconds</strong></p>
+    </div>
+    <div class="video-wrap" id="vtWrap">
+      <div class="video-placeholder" id="vtPlaceholder">
+        <div class="vi">🎬</div>
+        <p>Your video recorder loads here.<br>
+           <span style="font-size:12px">Configure VideoTiny in page settings.</span></p>
+        <button class="vt-btn" onclick="initVideoTiny()">▶ Open Video Recorder</button>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--t3);text-align:center;margin-top:4px">Video submits automatically with your application. Max 60 seconds.</p>
+    <input type="hidden" id="fi_videoUrl" value="">
+  `;
+
+  /* ── REFERENCES ─────────────────────────────────────── */
+  case 'references': return `
+    <h2 class="step-title">Professional Reference</h2>
+    <p class="step-sub">Provide one person who can speak to the quality of your work.</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Reference Name <span class="req">*</span></label>
+        <input class="form-input" id="fi_refName" type="text" placeholder="Maria Santos">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Role / Company <span class="req">*</span></label>
+        <input class="form-input" id="fi_refRole" type="text" placeholder="Senior Editor at XYZ Studio">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Email Address <span class="req">*</span></label>
+        <input class="form-input" id="fi_refEmail" type="email" placeholder="maria@studio.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number <span class="req">*</span></label>
+        <input class="form-input" id="fi_refPhone" type="tel" placeholder="+63 912 345 6789">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Relationship to You <span class="req">*</span></label>
+      <select class="form-select" id="fi_refRel">
+        <option value="">Select…</option>
+        <option>Former Manager</option><option>Former Supervisor</option>
+        <option>Former Colleague</option><option>Client</option>
+        <option>Mentor</option><option>Professor / Instructor</option>
+      </select>
+    </div>
+  `;
+
+  /* ── EDITOR: BEST EDIT ──────────────────────────────── */
+  case 'best_edit': return `
+    <h2 class="step-title">Your Best Edit</h2>
+    <p class="step-sub">Upload the single best video edit you've ever created. One chance — make it count.</p>
+    <div class="warn-box">
+      <p>⚠️ <strong>Do not submit a portfolio or multiple edits.</strong> We want exactly one video that best represents your capabilities. Submit your best work only.</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Upload Best Edit <span class="req">*</span></label>
+      <div class="upload-zone" id="uz_bestEdit" onclick="document.getElementById('fu_bestEdit').click()">
+        <input type="file" id="fu_bestEdit" accept="video/*" onchange="onFile(this,'bestEdit','uz_bestEdit')">
+        <div class="upload-icon">🎬</div>
+        <div class="upload-title">Click or drag to upload</div>
+        <div class="upload-hint">MP4 · MOV · Max 2 GB (or paste a link below)</div>
+        <div class="upload-fname" id="fn_bestEdit"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Or paste a link <span class="optional">(Google Drive, YouTube, or Vimeo)</span></label>
+      <input class="form-input" id="fi_bestEditUrl" type="url" placeholder="https://drive.google.com/…">
+    </div>
+  `;
+
+  /* ── EDITOR: EDIT VERIFICATION ──────────────────────── */
+  case 'edit_verify': return `
+    <h2 class="step-title">Edit Verification</h2>
+    <p class="step-sub">Verify the edit you submitted is your original work.</p>
+    <div class="info-box">
+      <div class="info-box-label">📁 Upload ONE of the Following</div>
+      <p>• Project file (.prproj · .drp · .fcp · .aep)<br>
+         • Raw footage used in the edit<br>
+         • Screen recording of your timeline</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Verification File <span class="req">*</span></label>
+      <div class="upload-zone" id="uz_editVerify" onclick="document.getElementById('fu_editVerify').click()">
+        <input type="file" id="fu_editVerify" accept=".prproj,.drp,.fcp,.aep,video/*" onchange="onFile(this,'editVerify','uz_editVerify')">
+        <div class="upload-icon">📂</div>
+        <div class="upload-title">Click or drag to upload</div>
+        <div class="upload-hint">Project file · raw footage · timeline recording (or link below)</div>
+        <div class="upload-fname" id="fn_editVerify"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Or paste a Google Drive link <span class="optional">(optional)</span></label>
+      <input class="form-input" id="fi_editVerifyUrl" type="url" placeholder="https://drive.google.com/…">
+    </div>
+  `;
+
+  /* ── EDITOR: EDITING WORKFLOW ───────────────────────── */
+  case 'edit_workflow': return `
+    <h2 class="step-title">Your Editing Workflow</h2>
+    <p class="step-sub">Walk us through your process from receiving raw footage to delivering the final export.</p>
+    <div class="form-group">
+      <label class="form-label">Describe your full editing workflow <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_editWf" placeholder="Step 1: Review the brief and raw footage…&#10;Step 2: Organize clips and structure the timeline…&#10;Step 3: …continue through to final export and delivery"></textarea>
+    </div>
+  `;
+
+  /* ── PM Q1 ──────────────────────────────────────────── */
+  case 'pm1': return `
+    <h2 class="step-title">Project Management</h2>
+    <p class="step-sub">Question 1 of 2 — Tell us about your management experience.</p>
+    <div class="form-group">
+      <label class="form-label">Describe a project where you managed multiple people and deadlines simultaneously. What systems or tools did you use? <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_pm1" placeholder="Describe the project scope, team size, tools used (ClickUp, Asana, etc.), and the final outcome…"></textarea>
+    </div>
+  `;
+
+  /* ── PM Q2 ──────────────────────────────────────────── */
+  case 'pm2': return `
+    <h2 class="step-title">Project Management</h2>
+    <p class="step-sub">Question 2 of 2 — Handle a real situation.</p>
+    <div class="form-group">
+      <label class="form-label">An editor misses a deadline and the client is waiting for delivery. How do you resolve the situation? <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_pm2" placeholder="Walk us through exactly what you do — who you contact first, what you say to the client, how you resolve it with the editor…"></textarea>
+    </div>
+  `;
+
+  /* ── SALES Q1 ───────────────────────────────────────── */
+  case 'sales1': return `
+    <h2 class="step-title">Sales Experience</h2>
+    <p class="step-sub">Question 1 of 2 — Tell us about your background in sales.</p>
+    <div class="form-group">
+      <label class="form-label">Describe your experience with sales calls or closing deals. Include what you sold, your process, and your results. <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_sales1" placeholder="What did you sell? What was your typical close rate? How did you approach objections? What were your results?…"></textarea>
+    </div>
+  `;
+
+  /* ── SALES Q2 ───────────────────────────────────────── */
+  case 'sales2': return `
+    <h2 class="step-title">Sales Experience</h2>
+    <p class="step-sub">Question 2 of 2 — Handle this live objection.</p>
+    <div class="info-box">
+      <div class="info-box-label">💬 The Prospect Says</div>
+      <p style="font-style:italic;font-size:15px">"Your service sounds good but I need to think about it."</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label">How would you respond during the call? <span class="req">*</span></label>
+      <textarea class="form-textarea tall" id="fi_sales2" placeholder="Write your exact response — what you would say word for word, in real time on the call…"></textarea>
+    </div>
+  `;
+
+  /* ── REVIEW ─────────────────────────────────────────── */
+  case 'review': return `
+    <h2 class="step-title">Review & Submit</h2>
+    <p class="step-sub">Double-check your details before submitting. You won't be able to edit after submission.</p>
+    <div class="info-box" style="margin-bottom:var(--s3)">
+      <div class="info-box-label">📋 Application Summary</div>
+      <table class="review-table">
+        <tr><td>Role</td><td>${ROLE_LABELS[S.role]}</td></tr>
+        <tr><td>Name</td><td>${esc(S.data.firstName||'')} ${esc(S.data.lastName||'')}</td></tr>
+        <tr><td>Email</td><td>${esc(S.data.email||'')}</td></tr>
+        <tr><td>Location</td><td>${esc(S.data.location||'')}</td></tr>
+        <tr><td>Experience</td><td>${esc(S.data.yrsExp||'')}</td></tr>
+        <tr><td>Start Date</td><td>${esc(S.data.startDate||'')}</td></tr>
+        <tr><td>Can Work PST</td><td>${esc(S.data.canPST||'')}</td></tr>
+        <tr><td>Software</td><td>${esc((S.data.software||'').substring(0,80))}${(S.data.software||'').length>80?'…':''}</td></tr>
+      </table>
+    </div>
+    <div class="warn-box">
+      <p>⚠️ By submitting you confirm all information is accurate and truthful. We review applications on a rolling basis and respond within 5–7 business days.</p>
+    </div>
+    <div class="form-group">
+      <div class="check-opt" id="cbConfirm" onclick="toggleCheck(this,'confirmed')">
+        <div class="check-box"></div>
+        <span class="check-text">I confirm everything I've provided is accurate and complete. <span class="req">*</span></span>
+      </div>
+    </div>
+  `;
+
+  default: return '<p>Unknown step.</p>';
+  }
+}
+
+/* ================================================================
+   POST-RENDER BINDINGS
+================================================================ */
+function postRender(key) {
+  if (key === 'work_hours') {
+    document.querySelectorAll('#rg_pst .radio-opt').forEach(o => {
+      o.addEventListener('click', () => {
+        const show = o.dataset.val === 'Yes';
+        document.getElementById('localHrsGrp').style.display = show ? 'block' : 'none';
+      });
+    });
+  }
+  if (key === 'video_intro' && CFG.VIDEOTINY_ID !== 'REPLACE_WITH_VIDEOTINY_PROJECT_ID') {
+    initVideoTiny();
+  }
+}
+
+function initVideoTiny() {
+  const wrap = document.getElementById('vtWrap');
+  if (!wrap) return;
+  wrap.innerHTML = `<iframe
+    src="https://videotiny.com/record/${CFG.VIDEOTINY_ID}"
+    class="videotiny-iframe"
+    allow="camera;microphone"
+    frameborder="0"></iframe>`;
+}
+
+/* ================================================================
+   RADIO / CHECKBOX / CHIPS
+================================================================ */
+function pickRadio(el) {
+  const rg = el.dataset.rg;
+  document.querySelectorAll(`[data-rg="${rg}"]`).forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  S.data[rg] = el.dataset.val;
+}
+
+function toggleCheck(el, field) {
+  el.classList.toggle('sel');
+  S.data[field] = el.classList.contains('sel');
+}
+
+function toggleChip(el) {
+  el.classList.toggle('sel');
+  syncChips();
+}
+
+function addChip() {
+  const inp = document.getElementById('chipInput');
+  const val = (inp.value || '').trim();
+  if (!val) return;
+  const existing = [...document.querySelectorAll('#chipWrap .chip')].find(c => c.dataset.v === val);
+  if (existing) { existing.classList.add('sel'); inp.value = ''; syncChips(); return; }
+  const chip = document.createElement('div');
+  chip.className = 'chip sel'; chip.dataset.v = val; chip.textContent = val;
+  chip.onclick = () => toggleChip(chip);
+  document.getElementById('chipWrap').appendChild(chip);
+  inp.value = '';
+  syncChips();
+}
+
+function syncChips() {
+  S.data.software = [...document.querySelectorAll('#chipWrap .chip.sel')].map(c => c.dataset.v).join(', ');
+}
+
+document.getElementById('chipInput')?.addEventListener?.('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); addChip(); } });
+
+/* ================================================================
+   FILE UPLOAD
+================================================================ */
+function onFile(input, field, zoneId) {
+  const file = input.files[0];
+  if (!file) return;
+  S.files[field] = file;
+  const fn = document.getElementById('fn_' + field);
+  if (fn) fn.textContent = `✓ ${file.name}  (${(file.size/1024/1024).toFixed(1)} MB)`;
+  const zone = document.getElementById(zoneId);
+  if (zone) { zone.style.borderColor = 'var(--blue)'; zone.style.borderStyle = 'solid'; }
+}
+
+// Drag-drop delegation
+document.getElementById('wBody').addEventListener('dragover', e => {
+  const zone = e.target.closest?.('.upload-zone');
+  if (zone) { e.preventDefault(); zone.classList.add('drag'); }
+});
+document.getElementById('wBody').addEventListener('dragleave', e => {
+  const zone = e.target.closest?.('.upload-zone');
+  if (zone) zone.classList.remove('drag');
+});
+document.getElementById('wBody').addEventListener('drop', e => {
+  const zone = e.target.closest?.('.upload-zone');
+  if (!zone) return;
+  e.preventDefault(); zone.classList.remove('drag');
+  const inp = zone.querySelector('input[type="file"]');
+  if (inp && e.dataTransfer.files.length) {
+    inp.files = e.dataTransfer.files;
+    inp.dispatchEvent(new Event('change'));
+  }
+});
+
+/* ================================================================
+   SAVE / RESTORE DATA
+================================================================ */
+function g(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+function saveData(key) {
+  switch (key) {
+    case 'basic_info':
+      Object.assign(S.data, { firstName:g('fi_first'), lastName:g('fi_last'), email:g('fi_email'), phone:g('fi_phone'), location:g('fi_location'), yrsExp:g('fi_yrsExp'), startDate:g('fi_startDate'), employers:g('fi_employers'), linkedin:g('fi_linkedin') }); break;
+    case 'work_hours':
+      S.data.localHrs = g('fi_localHrs'); break;
+    case 'computer_specs':
+      Object.assign(S.data, { cpu:g('fi_cpu'), ram:g('fi_ram'), gpu:g('fi_gpu'), os:g('fi_os') }); break;
+    case 'best_edit':
+      S.data.bestEditUrl = g('fi_bestEditUrl'); break;
+    case 'edit_verify':
+      S.data.editVerifyUrl = g('fi_editVerifyUrl'); break;
+    case 'edit_workflow': S.data.editWf    = g('fi_editWf'); break;
+    case 'ct1':          S.data.ct1        = g('fi_ct1');    break;
+    case 'ct2':          S.data.ct2        = g('fi_ct2');    break;
+    case 'ct3':          S.data.ct3        = g('fi_ct3');    break;
+    case 'pm1':          S.data.pm1        = g('fi_pm1');    break;
+    case 'pm2':          S.data.pm2        = g('fi_pm2');    break;
+    case 'sales1':       S.data.sales1     = g('fi_sales1'); break;
+    case 'sales2':       S.data.sales2     = g('fi_sales2'); break;
+    case 'references':
+      Object.assign(S.data, { refName:g('fi_refName'), refRole:g('fi_refRole'), refEmail:g('fi_refEmail'), refPhone:g('fi_refPhone'), refRel:g('fi_refRel') }); break;
+    case 'video_intro':
+      S.data.videoUrl = g('fi_videoUrl'); break;
+  }
+}
+
+function restoreData(key) {
+  const set = (id,v) => { const el=document.getElementById(id); if(el&&v) el.value=v; };
+  const d = S.data;
+  if (key === 'basic_info') {
+    set('fi_first',d.firstName); set('fi_last',d.lastName); set('fi_email',d.email);
+    set('fi_phone',d.phone); set('fi_location',d.location); set('fi_yrsExp',d.yrsExp);
+    set('fi_startDate',d.startDate); set('fi_employers',d.employers); set('fi_linkedin',d.linkedin);
+  }
+  if (key === 'work_hours' && d.canPST) {
+    document.querySelectorAll('[data-rg="canPST"]').forEach(o => {
+      if (o.dataset.val === d.canPST) { o.classList.add('sel'); if(d.canPST==='Yes') document.getElementById('localHrsGrp').style.display='block'; }
+    });
+    set('fi_localHrs', d.localHrs);
+  }
+  if (key === 'computer_specs') {
+    set('fi_cpu',d.cpu); set('fi_ram',d.ram); set('fi_gpu',d.gpu); set('fi_os',d.os);
+    if (d.storage) document.querySelectorAll('[data-rg="storage"]').forEach(o => { if(o.dataset.val===d.storage) o.classList.add('sel'); });
+  }
+  if (key === 'software_exp' && d.software) {
+    const vals = d.software.split(', ');
+    document.querySelectorAll('#chipWrap .chip').forEach(c => { if(vals.includes(c.dataset.v)) c.classList.add('sel'); });
+  }
+  if (key === 'ct1') set('fi_ct1', d.ct1);
+  if (key === 'ct2') set('fi_ct2', d.ct2);
+  if (key === 'ct3') set('fi_ct3', d.ct3);
+  if (key === 'edit_workflow') set('fi_editWf', d.editWf);
+  if (key === 'pm1') set('fi_pm1', d.pm1);
+  if (key === 'pm2') set('fi_pm2', d.pm2);
+  if (key === 'sales1') set('fi_sales1', d.sales1);
+  if (key === 'sales2') set('fi_sales2', d.sales2);
+  if (key === 'references') {
+    set('fi_refName',d.refName); set('fi_refRole',d.refRole);
+    set('fi_refEmail',d.refEmail); set('fi_refPhone',d.refPhone); set('fi_refRel',d.refRel);
+  }
+  if (key === 'best_edit') set('fi_bestEditUrl', d.bestEditUrl);
+  if (key === 'edit_verify') set('fi_editVerifyUrl', d.editVerifyUrl);
+}
+
+/* ================================================================
+   VALIDATION
+================================================================ */
+function clearErrs() {
+  document.querySelectorAll('.ferr').forEach(e=>e.remove());
+  document.querySelectorAll('.err').forEach(e=>e.classList.remove('err'));
+}
+
+function ferr(elId, msg) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  el.classList.add('err');
+  const d = document.createElement('div'); d.className='ferr'; d.textContent=msg||'Required';
+  el.parentNode.insertBefore(d, el.nextSibling);
+}
+
+function shakeEl(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('shake');
+  setTimeout(() => el.classList.remove('shake'), 500);
+}
+
+function validate(key) {
+  clearErrs();
+  let ok = true;
+
+  const req = (id) => { const v=g(id); if(!v){ferr(id);ok=false;} };
+  const reqRadio = (rg) => { if(!S.data[rg]){ shakeEl('rg_'+rg); ok=false; } };
+  const reqFile  = (field,zoneId) => { if(!S.files[field]){ shakeEl(zoneId); ok=false; } };
+  const reqFileOrUrl = (field, zoneId, urlId) => {
+    if (!S.files[field] && !g(urlId)) { shakeEl(zoneId); ok=false; }
+  };
+
+  switch (key) {
+    case 'basic_info':
+      ['fi_first','fi_last','fi_email','fi_phone','fi_location','fi_yrsExp','fi_startDate','fi_employers'].forEach(req);
+      break;
+    case 'work_hours':
+      reqRadio('canPST');
+      if (S.data.canPST === 'Yes') req('fi_localHrs');
+      break;
+    case 'computer_specs':
+      ['fi_cpu','fi_ram','fi_gpu','fi_os'].forEach(req);
+      reqRadio('storage');
+      break;
+    case 'internet_speed':  reqFile('speed','uz_speed');                              break;
+    case 'ct1':             req('fi_ct1');                                            break;
+    case 'ct2':             req('fi_ct2');                                            break;
+    case 'ct3':             req('fi_ct3');                                            break;
+    case 'edit_workflow':   req('fi_editWf');                                         break;
+    case 'pm1':             req('fi_pm1');                                            break;
+    case 'pm2':             req('fi_pm2');                                            break;
+    case 'sales1':          req('fi_sales1');                                         break;
+    case 'sales2':          req('fi_sales2');                                         break;
+    case 'best_edit':       reqFileOrUrl('bestEdit','uz_bestEdit','fi_bestEditUrl');  break;
+    case 'edit_verify':     reqFileOrUrl('editVerify','uz_editVerify','fi_editVerifyUrl'); break;
+    case 'references':
+      ['fi_refName','fi_refRole','fi_refEmail','fi_refPhone','fi_refRel'].forEach(req);
+      break;
+    case 'review':
+      if (!S.data.confirmed) { shakeEl('cbConfirm'); ok=false; }
+      break;
+  }
+
+  return ok;
+}
+
+/* ================================================================
+   SUBMIT
+================================================================ */
+async function submit() {
+  if (S.submitting) return;
+  S.submitting = true;
+  const btn = document.getElementById('wNext');
+  btn.textContent = 'Submitting…'; btn.disabled = true;
+
+  try {
+    const fields = buildFields();
+
+    // Try portal backend first (handles file uploads properly)
+    let submitted = false;
+    try {
+      const body = new FormData();
+      body.append('fields', JSON.stringify(fields));
+      for (const [k, f] of Object.entries(S.files)) body.append(k, f);
+      const r = await fetch(CFG.SUBMIT_ENDPOINT, { method:'POST', body });
+      if (r.ok) submitted = true;
+    } catch (_) {}
+
+    // Fallback: direct to Airtable (text fields only — files stored by name)
+    if (!submitted) {
+      const fileNames = {};
+      for (const [k,f] of Object.entries(S.files)) fileNames[k] = f.name;
+      Object.assign(fields, { 'Uploaded Files': JSON.stringify(fileNames) });
+
+      const r = await fetch(`https://api.airtable.com/v0/${CFG.AIRTABLE_BASE_ID}/${CFG.AIRTABLE_TABLE}`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${CFG.AIRTABLE_API_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields })
+      });
+      if (!r.ok) throw new Error(await r.text());
+    }
+
+    showSuccess();
+
+  } catch (err) {
+    console.error('Submission error:', err);
+    btn.textContent = 'Error — Try Again'; btn.style.background = '#d32f2f';
+    btn.disabled = false; S.submitting = false;
+  }
+}
+
+function buildFields() {
+  const d = S.data;
+  const f = {
+    'Role':                   d.role||'',
+    'First Name':             d.firstName||'',
+    'Last Name':              d.lastName||'',
+    'Email':                  d.email||'',
+    'Phone':                  d.phone||'',
+    'Location (Philippines)': d.location||'',
+    'Years of Experience':    d.yrsExp||'',
+    'Previous Employers':     d.employers||'',
+    'LinkedIn':               d.linkedin||'',
+    'Earliest Start Date':    d.startDate||'',
+    'Can Work PST':           d.canPST||'',
+    'Local Hours (PH)':       d.localHrs||'',
+    'CPU':                    d.cpu||'',
+    'RAM':                    d.ram||'',
+    'GPU':                    d.gpu||'',
+    'Storage Type':           d.storage||'',
+    'Operating System':       d.os||'',
+    'Software Experience':    d.software||'',
+    'Critical Thinking Q1':   d.ct1||'',
+    'Critical Thinking Q2':   d.ct2||'',
+    'Critical Thinking Q3':   d.ct3||'',
+    'Video Introduction URL': d.videoUrl||'',
+    'Reference Name':         d.refName||'',
+    'Reference Role/Company': d.refRole||'',
+    'Reference Email':        d.refEmail||'',
+    'Reference Phone':        d.refPhone||'',
+    'Reference Relationship': d.refRel||'',
+    'Submitted At':           d.ts||new Date().toISOString(),
+  };
+  if (S.role === 'editor') {
+    f['Best Edit URL']       = d.bestEditUrl||'';
+    f['Edit Verification URL']= d.editVerifyUrl||'';
+    f['Editing Workflow']    = d.editWf||'';
+  }
+  if (S.role === 'pm') {
+    f['PM Question 1'] = d.pm1||'';
+    f['PM Question 2'] = d.pm2||'';
+  }
+  if (S.role === 'sales') {
+    f['Sales Question 1'] = d.sales1||'';
+    f['Sales Question 2'] = d.sales2||'';
+  }
+  return f;
+}
+
+/* ================================================================
+   SUCCESS
+================================================================ */
+function showSuccess() {
+  document.getElementById('wBody').innerHTML = `
+    <div class="success-wrap">
+      <div class="success-check">✓</div>
+      <h2 class="success-title">Application Submitted!</h2>
+      <p class="success-sub">Thanks for applying for the <strong>${ROLE_LABELS[S.role]}</strong> role at Content Bug. We'll review your application and reach out within 5–7 business days.</p>
+      <button class="success-close" onclick="closeWizard()">Done</button>
+    </div>
+  `;
+  document.getElementById('wFooter').style.display = 'none';
+}
+
+/* ================================================================
+   UTILS
+================================================================ */
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>

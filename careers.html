@@ -66,30 +66,12 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ────────────────────────────────────────────────── */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 var(--s6); height: 52px;
-      background: rgba(12,22,39,0.92);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      backdrop-filter: none;
-    }
-    .nav-logo {
-      font-family: var(--font-display); font-size: 17px; font-weight: 700;
-      color: #fff; text-decoration: none; letter-spacing: -0.02em;
-    }
-    .nav-back {
-      font-family: var(--font-text); font-size: 14px; font-weight: 600;
-      color: var(--blue3); text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .nav-back:hover { opacity: 0.75; }
+
 
     /* ── HERO ───────────────────────────────────────────────── */
     .hero {
       background: var(--bg-dark);
-      padding: calc(52px + var(--s10)) var(--s6) var(--s10);
+      padding: var(--s10) var(--s6);
       text-align: center; position: relative; overflow: hidden;
     }
     .hero::before {
@@ -493,11 +475,7 @@
     .review-table tr td:first-child { color: var(--t3); font-weight: 600; width: 45%; padding-right: 12px; }
     .review-table tr td:last-child { color: var(--t1); }
 
-    /* PAGE FOOTER */
-    .page-footer {
-      background: var(--bg-dark); padding: var(--s8) var(--s6); text-align: center;
-    }
-    .page-footer p { font-family: var(--font-text); font-size: 13px; color: rgba(255,255,255,0.3); }
+    /* PAGE FOOTER — handled by shared footer.html */
 
     /* Animations */
     @keyframes shake {
@@ -512,7 +490,7 @@
     /* Responsive */
     @media (max-width: 768px) {
       .nav { padding: 0 var(--s4); }
-      .hero { padding: calc(52px + var(--s8)) var(--s4) var(--s8); }
+      .hero { padding: var(--s8) var(--s4); }
       .roles-section { padding: var(--s8) var(--s4); }
       .roles-grid { grid-template-columns: 1fr; }
       .wizard-body { padding: var(--s4); }
@@ -532,10 +510,7 @@
 <body>
 
 <!-- ── NAV ───────────────────────────────────────────────── -->
-<nav class="nav">
-  <a href="/" class="nav-logo">Content Bug</a>
-  <a href="/" class="nav-back">← Back to Site</a>
-</nav>
+
 
 <!-- ── HERO ──────────────────────────────────────────────── -->
 <section class="hero">
@@ -586,9 +561,7 @@
 </section>
 
 <!-- ── FOOTER ─────────────────────────────────────────────── -->
-<footer class="page-footer">
-  <p>© 2025 Content Bug. Applications reviewed on a rolling basis. We'll respond within 5–7 business days.</p>
-</footer>
+
 
 <!-- ── WIZARD MODAL ───────────────────────────────────────── -->
 <div class="wizard-overlay" id="wOverlay">

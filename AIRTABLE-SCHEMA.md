@@ -1,102 +1,104 @@
-# Airtable Careers Base — Schema & Setup
+# Content Bug Careers — Airtable Schema
 
-## Base Setup
-
-Create a new Airtable Base named: **Content Bug Careers**
-
----
+## Base
+- **Base ID:** `appUvZqaCBZ42r9Nl`
+- **Base URL:** https://airtable.com/appUvZqaCBZ42r9Nl
 
 ## Table: Applications
-
-Create one table with the following fields:
-
-| Field Name | Field Type | Notes |
-|---|---|---|
-| Role | Single line text | "Professional Editor", "Project Manager", or "Sales Closer" |
-| First Name | Single line text | |
-| Last Name | Single line text | |
-| Email | Email | |
-| Phone | Phone number | |
-| Location (Philippines) | Single line text | City / Province |
-| Years of Experience | Single line text | Dropdown value |
-| Previous Employers | Long text | |
-| LinkedIn | URL | Optional |
-| Earliest Start Date | Date | |
-| Can Work PST | Single line text | "Yes" or "No" |
-| Local Hours (PH) | Single line text | If Yes |
-| CPU | Single line text | |
-| RAM | Single line text | |
-| GPU | Single line text | |
-| Storage Type | Single line text | SSD / HDD / Both |
-| Operating System | Single line text | |
-| Software Experience | Long text | Comma-separated list |
-| Critical Thinking Q1 | Long text | |
-| Critical Thinking Q2 | Long text | |
-| Critical Thinking Q3 | Long text | |
-| Video Introduction URL | URL | From VideoTiny |
-| Reference Name | Single line text | |
-| Reference Role/Company | Single line text | |
-| Reference Email | Email | |
-| Reference Phone | Phone number | |
-| Reference Relationship | Single line text | |
-| Best Edit URL | URL | Editor only |
-| Edit Verification URL | URL | Editor only |
-| Editing Workflow | Long text | Editor only |
-| PM Question 1 | Long text | PM only |
-| PM Question 2 | Long text | PM only |
-| Sales Question 1 | Long text | Sales only |
-| Sales Question 2 | Long text | Sales only |
-| Uploaded Files | Long text | JSON list of uploaded filenames (fallback) |
-| Submitted At | Date (with time) | ISO timestamp |
+- **Table ID:** `tblTu0xMDJmfWymey`
 
 ---
 
-## Views
+## Fields (Real IDs — Production)
 
-Create 3 filtered views:
-
-### 1. Editor Applicants
-- Filter: Role = "Professional Editor"
-
-### 2. Project Manager Applicants
-- Filter: Role = "Project Manager"
-
-### 3. Sales Applicants
-- Filter: Role = "Sales Closer"
+| Field Name | Field ID | Type | Notes |
+|---|---|---|---|
+| Name | `fldGuCCrHJNhu3ZPK` | singleLineText | Primary field. Auto-set to "First Last — Role" |
+| Role | `fld0Nxp0mO9yzduTV` | singleSelect | Professional Editor / Project Manager / Sales Closer |
+| Application Status | `fldkN92KyIHvC5Ikt` | singleSelect | New → Reviewing → Interview → Hired → Rejected |
+| Submitted At | `fldsqWvdErh0AWDCV` | dateTime | ISO timestamp, PST timezone |
+| First Name | `fldER8Ol5pshvoOBw` | singleLineText | |
+| Last Name | `fldSlj7j5H0KvEuUR` | singleLineText | |
+| Email | `fldAxQ3EoEABvuxMt` | email | |
+| Phone | `fld2EFJAuXLGBpgjl` | phoneNumber | |
+| Location (Philippines) | `fld1DYW8HbFelINn1` | singleLineText | City / Province |
+| Years of Experience | `fldO8RB0E1jYIbQf9` | singleSelect | Less than 1 year / 1–2 years / 3–5 years / 5–8 years / 8+ years |
+| Earliest Start Date | `fldtcGm9Nl7r75NAo` | date | ISO format |
+| Previous Employers | `fldw0aETx02nZq6cS` | multilineText | |
+| LinkedIn | `fldUZonh7i52QO7AK` | url | Optional |
+| Can Work PST Hours | `fldWddUr2bWpivd0X` | singleSelect | Yes / No |
+| Local Hours (Philippines) | `fldoGG8nONCXzX5Jt` | singleLineText | e.g. "1:00 AM – 10:00 AM PHT" |
+| CPU | `fld81LEMiSwLxy8dX` | singleLineText | |
+| RAM | `fld9NSZi8UrkWp6fW` | singleSelect | 8 GB / 16 GB / 32 GB / 64 GB / 128 GB+ |
+| GPU | `fldMY1iOmerRJQgsu` | singleLineText | |
+| Storage Type | `fld21FyuwGSA4XEMZ` | singleSelect | SSD / HDD / SSD + HDD |
+| Operating System | `fldlUw7Qks9AThqnv` | singleSelect | Windows 10/11, macOS 12–15, Linux |
+| Speed Test Screenshot | `flddKATewzJzkBJuc` | multipleAttachments | Uploaded via portal backend |
+| Software Experience | `fldCdXv27ZIH7vq14` | multilineText | Comma-separated list |
+| Critical Thinking Q1 | `fldbBT0tAI826nDeA` | multilineText | Competing deadlines scenario |
+| Critical Thinking Q2 | `fld96SxmrZlyjC8Xh` | multilineText | Undetected mistake scenario |
+| Critical Thinking Q3 | `fldiAHNU1MTk6ILPI` | multilineText | Learning quickly scenario |
+| Video Introduction URL | `fldMC2C0UGCneJJta` | url | From VideoTiny |
+| Reference Name | `fldAikSAqmolySzYC` | singleLineText | |
+| Reference Role/Company | `fldx0RDKuADk0hqFT` | singleLineText | |
+| Reference Email | `fldVYtKQS3sxku0Jz` | email | |
+| Reference Phone | `fld8UkzEkW0qKqqxC` | phoneNumber | |
+| Reference Relationship | `flduXMjn7nRh2wHxV` | singleSelect | Former Manager / Supervisor / Colleague / Client / Mentor / Professor |
+| Best Edit (URL/Link) | `fld3KXXVRGClkmlVf` | url | Editor only |
+| Best Edit Upload | `fldmEyPu6mVtU3sQM` | multipleAttachments | Editor only — uploaded via portal backend |
+| Edit Verification (URL/Link) | `fldTjKPDjmEAh8g47` | url | Editor only |
+| Edit Verification Upload | `fldJCO3lQ1WdmVpq5` | multipleAttachments | Editor only — uploaded via portal backend |
+| Editing Workflow | `fldDQXaDqxxHTJ94m` | multilineText | Editor only |
+| PM Question 1 | `fldoOvNJj11TEOVDJ` | multilineText | PM only — managing multiple people/deadlines |
+| PM Question 2 | `fldg5aLxaxuBXDNiM` | multilineText | PM only — editor misses deadline scenario |
+| Sales Question 1 | `fldShnAAJBbdfPPwh` | multilineText | Sales only — experience closing deals |
+| Sales Question 2 | `fldfE9v7UzWHjMciA` | multilineText | Sales only — objection handling |
+| Reviewer Notes | `fldqpjpjidJxrQiF2` | multilineText | Internal use only |
+| Contains Phrase (Sean is Cool) | `fldiPpMlfZhoOFpSr` | checkbox | Auto-checked by backend if phrase found in answers |
 
 ---
 
-## After Creating the Base
+## Submit Endpoint
 
-1. Copy the Base ID from the Airtable URL: `airtable.com/BASE_ID/...`
-2. Open `careers.html` and update line ~6 of the `<script>`:
+**All applications post to the portal backend — never direct to Airtable from the frontend.**
 
-```js
-AIRTABLE_BASE_ID: 'appXXXXXXXXXXXXXX',   // ← paste your base ID here
+```
+POST https://api.contentbug.io/api/careers/apply
+Content-Type: multipart/form-data
+
+fields       — JSON string of all text form data
+speed        — File: speed test screenshot
+bestEdit     — File: best edit video (editor only)
+editVerify   — File: edit verification file (editor only)
 ```
 
----
-
-## Portal Backend Route (Recommended)
-
-For proper file uploads, add these two routes to `server.js`:
-
-```js
-// POST /api/careers/upload — handles file uploads to Google Drive
-// POST /api/careers/apply  — creates Airtable record with file URLs
-```
-
-The careers.html will try the portal endpoint first, then fall back to direct
-Airtable API (text fields only, no files) if the backend is unavailable.
+The portal route (`server.js`) handles:
+- Writing all fields to this Airtable base using the real field IDs above
+- Uploading files to Airtable attachments
+- Setting `Application Status` = "New" on every submission
+- Auto-checking `Contains Phrase (Sean is Cool)` by scanning all text fields
 
 ---
 
 ## VideoTiny Setup
 
 1. Create a project at videotiny.com
-2. Copy your Project ID
-3. Update `careers.html`:
+2. Update `careers.html` script config:
 
 ```js
 VIDEOTINY_ID: 'your_project_id_here',
 ```
+
+Video URLs are stored in the `Video Introduction URL` field after recording.
+
+---
+
+## Views to Create in Airtable
+
+Go to the base and manually create 3 filtered views:
+
+| View Name | Filter |
+|---|---|
+| Editor Applicants | Role = "Professional Editor" |
+| Project Manager Applicants | Role = "Project Manager" |
+| Sales Applicants | Role = "Sales Closer" |

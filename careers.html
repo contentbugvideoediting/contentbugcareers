@@ -426,7 +426,7 @@
     .form-input::placeholder, .form-textarea::placeholder { color: var(--t3); }
     .form-textarea { min-height: 120px; resize: vertical; line-height: 1.55; }
     .form-textarea.tall { min-height: 165px; }
-    .form-input.err, .form-textarea.err, .form-select.err { border-color: #d32f2f; }
+    .form-input.err, .form-textarea.err, .form-select.err { border-color: #c0392b; }
 
     /* Info / warning boxes */
     .info-box {
@@ -558,16 +558,16 @@
     .videotiny-iframe { width: 100%; height: 100%; border: none; }
 
     /* Field error */
-    .ferr { font-family: var(--font-text); font-size: 12px; color: #d32f2f; margin-top: 5px; font-weight: 500; }
+    .ferr { font-family: var(--font-text); font-size: 12px; color: #c0392b; margin-top: 5px; font-weight: 500; }
 
     /* Success screen */
     .success-wrap { text-align: center; padding: var(--s10) var(--s6); }
     .success-check {
       width: 76px; height: 76px; border-radius: 50%;
-      background: linear-gradient(135deg, #34c759, #30d158);
+      background: linear-gradient(135deg, #7ecba1, #7ecba1);
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto var(--s4); font-size: 34px; color: #fff;
-      box-shadow: 0 8px 24px rgba(52,199,89,0.35);
+      box-shadow: 0 8px 24px rgba(126,203,161,0.35);
     }
     .success-title {
       font-family: var(--font-display); font-size: 30px; font-weight: 700;
@@ -1606,7 +1606,7 @@ async function submit() {
 
   } catch (err) {
     console.error('Submission error:', err);
-    btn.textContent = 'Error — Try Again'; btn.style.background = '#d32f2f';
+    btn.textContent = 'Error — Try Again'; btn.style.background = '#c0392b';
     btn.disabled = false; S.submitting = false;
   }
 }
